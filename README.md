@@ -29,3 +29,19 @@ The following code shows how to verify certain arguments given to a mock.
 To verify arguments’ properties with Mockito, there is a way to do that by using a specific method. The yellowed out part of the following example, shows one implementation.
 
 ![image 5](https://github.com/mp525/TestAssignment4/blob/master/images/5.JPG)
+
+## Coverage report, mutation testing and static analysis
+The coverage report was generated using jacoco and the following in a terminal: *mvn clean test*. The report front page is as follows:
+
+![image 6](https://github.com/mp525/TestAssignment4/blob/master/images/jacoco.JPG)
+
+The result is a html document showing the test coverage of the code. The document can be found in the *test_sites* folder. 
+
+Mutation testing was done using PiTest and the following command: *mvn test-compile org.pitest:pitest-maven:mutationCoverage*. The results of the test are shown in the terminal as follows:
+
+![image 7](https://github.com/mp525/TestAssignment4/blob/master/images/pitest_nonKilled.JPG)
+
+Due to some unexplained error in implementation, the number of mutations "killed" is 0.
+
+For the static analysis of the code I've used PMD. PMD generates an html document after running the following command in a terminal: *mvn pmd:pmd pmd:cpd*. This document shows any failure to follow a certain code standard, in the project. The resulting html page shows one error in my case:
+
