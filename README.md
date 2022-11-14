@@ -45,3 +45,6 @@ Due to some unexplained error in implementation, the number of mutations "killed
 
 For the static analysis of the code I've used PMD. PMD generates an html document after running the following command in a terminal: *mvn pmd:pmd pmd:cpd*. This document shows any failure to follow a certain code standard, in the project. The resulting html page shows one error in my case:
 
+![image 8](https://github.com/mp525/TestAssignment4/blob/master/images/pmd.JPG)
+
+The generated html file can be found in the *test_sites* folder.
