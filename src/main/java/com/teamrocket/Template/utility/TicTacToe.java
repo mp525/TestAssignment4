@@ -34,6 +34,11 @@ public class TicTacToe {
             makeMove(move, "player");
             movesMade.add(move);
             int aiMove = generateMove();
+            if(aiMove == 0){
+                String result = checkWinner();
+                System.out.println(result);
+                gameOngoing = false;
+            }
             makeMove(aiMove, "AI");
             showBoard();
             String result = checkWinner();
@@ -54,6 +59,9 @@ public class TicTacToe {
                 occupiedMove = true;
             } else {
                 occupiedMove = false;
+            }
+            if (playerPositions.size() + aiPositions.size() == 9){
+                return 0;
             }
         }
         return aiMove;
@@ -139,6 +147,8 @@ public class TicTacToe {
                 break;
             case 9:
                 gameBoard[4][4] = symbol;
+                break;
+            default:
                 break;
         }
         return move;
